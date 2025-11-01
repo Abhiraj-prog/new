@@ -47,6 +47,25 @@ public class implementation {
             }
         }
 
+        void inertAt(int idx, int val){
+            Node t =new Node(val);
+            Node temp =head;
+            for(int i=0;i<idx-1;i++){
+                temp = temp.next;
+            }
+            t.next=temp.next;
+            temp.next=t;
+
+        }
+
+        int getAt(int idx){
+            Node temp =head;
+            for (int i=0;i<idx;i++){
+                temp=temp.next;
+            }
+            return temp.data;
+        }
+
 
         // 🔹 Function to print all elements of the linked list
         void display() {
@@ -66,14 +85,19 @@ public class implementation {
 
         // Insert elements at the end of the list
         ll.insertAtEnd(4);   // List: 4
-        ll.display();        // Output: 4
+//        ll.display();        // Output: 4
         ll.insertAtEnd(5);   // List: 4 → 5
-        ll.display();        // Output: 4 5
+//        ll.display();        // Output: 4 5
         ll.insertAtEnd(10);  // List: 4 → 5 ->10
-        ll.display();        // Output: 4 5 10
+//        ll.display();        // Output: 4 5 10
 
         ll.insertAtStart(13); // List: 13-> 4 → 5 ->10
         ll.display(); //13 4 5 10
+
+        ll.inertAt(2,10);
+        ll.display(); //13 4 10 5 10
         // Display all elements
+
+        System.out.println(ll.getAt(2));
     }
 }
