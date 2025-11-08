@@ -26,13 +26,14 @@ public class implementation {
             // If list is empty, new node becomes the first (head)
             if (head == null) {
                 head = temp;
+                
             }
             // Otherwise, attach new node after the tail
             else {
                 tail.next = temp;
             }
             // Move tail pointer to the newly added node (last node)
-            tail = temp;
+                tail = temp;
         }
 
         // 🔸 Insert a new node at the start of the list
